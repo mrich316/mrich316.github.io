@@ -1,0 +1,13 @@
+# Site settings
+title: mrich316
+#email: 
+description: >
+  Martin Richard works at city of Laval. His job is to challenge status quo,
+  propose new ideas and shake the e-landscape of our beautiful city.
+baseurl: ""
+url: "https://mrich316.github.io"
+#twitter_username: mrich316
+github_username:  mrich316
+
+# Build settings
+markdown: kramdown
