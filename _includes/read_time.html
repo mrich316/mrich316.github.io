@@ -1,0 +1,13 @@
+{% comment %}
+Based on http://carlosbecker.com/posts/jekyll-reading-time-without-plugins/
+http://en.wikipedia.org/wiki/Words_per_minute (typically 180 words per minutes)
+{% endcomment %}
+
+{% capture words %}
+  {{ page.content | number_of_words | minus: 180 }}
+{% endcapture %}
+{% if words < '180' %}
+  1 minute to read
+{% else %}
+  {{ words | plus: 180 | divided_by: 180 | append: " minutes to read" }}
+{% endif %}

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learn, practice, teach, repeat"
+title:  "Learn, Practice, Teach, Repeat"
 date:   2015-12-29 21:52:46
 categories: blog
 ---
