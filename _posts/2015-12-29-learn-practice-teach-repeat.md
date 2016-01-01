@@ -11,6 +11,6 @@ I kept thinking about what my teachers did to be great at teaching to find what 
 
 In computer-related terms (I'm that type of guy after all), **they abstracted to the level of their targetted audience**. It is a skill I find difficult to master and it explains why only fellows with similar career paths can normally understand me.
 
-This blog addresses my weakest link: teaching.  It is my first attempt at such things it will not be pretty, but as I'm always thriving to be better, we'll see how that goes.
+This blog addresses my weakest link: teaching.  It is my first attempt at such things. It will not be pretty, but as I'm always thriving to be better, we'll see how that goes.
 
 Stay tuned !
