@@ -15,7 +15,8 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
         <p>
-        {{ post.excerpt | remove: '<p>' | remove: '</p>' }} <a href="{{ post.url | prepend: site.baseurl }}">read</a>
+        {{ post.excerpt | remove: '<p>' | remove: '</p>' }} 
+        <a href="{{ post.url | prepend: site.baseurl }}">{% include read_time.html %}</a>
         </p>
       </li>
     {% endfor %}
