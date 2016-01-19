@@ -48,12 +48,10 @@ Open-source can become legacy just like regular software.  The web evolves faste
 Resist the temptation to mix and match many open-source projects to liberate your data if they are not
 backed by respected individuals.
 
-With that in mind, I chose to explicitly declare a contract that I "own" to hide implementation details
-like the software used to have a solution that can resist the ages of time and be used almost everywhere.
-
 In a next post, I'll show how we can encapsulate [GDAL ogr2ogr](http://www.gdal.org/ogr2ogr.html) in a
 rest api coded in C# [ASP.NET Web API](http://www.asp.net/web-api).  As readers may have found out, similar
-[solutions](http://ogre.adc4gis.com/) can already be found on the net.  I chose to explicitly declare a contract that I "own" to hide implementation details and protect the API from "forced" evolution (like vendor upgrades containing [breaking changes](https://en.wiktionary.org/wiki/breaking_change)).
+[solutions](http://ogre.adc4gis.com/) can already be found on the net.
+I'll do it simply to learn and share ;)
 
 *[ETL]: Extract, Transform, Load
 *[CSV]: Comma Separated Values
