@@ -17,8 +17,8 @@ Vagrant.configure(2) do |config|
     sudo -E apt-get install -y software-properties-common ruby2.2-dev ruby2.2 nodejs git zlib1g-dev
     sudo -E gem install jekyll github-pages
 
-    # To start jekyll, run
     # I use --force_polling because on windows, changes are not detected otherwise.
-    # jekyll serve --force_polling --drafts --host 0.0.0.0
+    # To start jekyll, run: (it could be a startup script)
+    # jekyll serve --force_polling --drafts --host 0.0.0.0 --source /vagrant
   SHELL
 end
