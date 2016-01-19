@@ -9,20 +9,19 @@ Open-data initiatives are becoming the norm for all government agencies worldwid
 Major cities are offering datasets to help foster innovation, create new markets,
 increasing transparency and citizen engagement.
 
-As Tim Berners-Lee said:
-
 > Data is a precious thing and will last longer than the systems themselves.
+>
+> --Tim Berners-Lee
 
-Accessibility is a real concern here: We want our data to be used, crunched, mashed-up in ways
-never imagined by our marketing dept. We should not expose proprietary/internal formats
-to the public.
+Accessibility is a real concern here: We want our data to be used, crunched and mashed-up in ways
+never imagined by our marketing dept. For this to happen at large scale, we must not expose
+proprietary/internal formats to the public.
 
-To get data out quickly, we could:
+To get data out quickly, we can:
 
-- ask our in-house developers to program extensions to proprietary software to export data
-- deploy ETL tools and schedule scripts, workbenches, etc.
-- leverage the above with a twist; create a rest api to liberate any data as a
-  service using open-source tools.
+- ask our in-house developers to create extensions in proprietary software (to export data)
+- deploy free (or buy) ETL tools and schedule scripts, workbenches, etc.
+- create a [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) api to liberate any data as a service using open-source tools.
 
 All solutions are good. It all depends on what your agenda is and where you want to go.
 I'm a proponent of *anything as a service*, so the third option is the most appropriate
@@ -47,13 +46,17 @@ like *git* or *svn*).
 
 Open-source can become legacy just like regular software.  The web evolves faster than the government.
 Resist the temptation to mix and match many open-source projects to liberate your data if they are not
-backed by respected teams.
+backed by respected individuals.
+
+With that in mind, I chose to explicitly declare a contract that I "own" to hide implementation details
+like the software used to have a solution that can resist the ages of time and be used almost everywhere.
 
 In a next post, I'll show how we can encapsulate [GDAL ogr2ogr](http://www.gdal.org/ogr2ogr.html) in a
-rest api coded in C# [ASP.NET Web API](http://www.asp.net/web-api).  As readers may have found, similar
-[solutions](http://ogre.adc4gis.com/) can already be found on the net.
+rest api coded in C# [ASP.NET Web API](http://www.asp.net/web-api).  As readers may have found out, similar
+[solutions](http://ogre.adc4gis.com/) can already be found on the net.  I chose to explicitly declare a contract that I "own" to hide implementation details and protect the API from "forced" evolution (like vendor upgrades containing [breaking changes](https://en.wiktionary.org/wiki/breaking_change)).
 
 *[ETL]: Extract, Transform, Load
 *[CSV]: Comma Separated Values
 *[Tim Berners-Lee]: Inventor of the World-Wide-Web
 *[SCM]: Source Configuration Management
+*[REST]: REpresentational State Transfer
