@@ -49,6 +49,10 @@ Open-source can become legacy just like regular software.  The web evolves faste
 Resist the temptation to mix and match many open-source projects to liberate your data if they are not
 backed by respected teams.
 
+In a next post, I'll show how we can encapsulate [GDAL ogr2ogr](http://www.gdal.org/ogr2ogr.html) in a
+rest api coded in C# [ASP.NET Web API](http://www.asp.net/web-api).  As readers may have found, similar
+[solutions](http://ogre.adc4gis.com/) can already be found on the net.
+
 *[ETL]: Extract, Transform, Load
 *[CSV]: Comma Separated Values
 *[Tim Berners-Lee]: Inventor of the World-Wide-Web
