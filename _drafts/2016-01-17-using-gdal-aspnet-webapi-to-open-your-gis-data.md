@@ -22,7 +22,7 @@ What I seek to achieve:
   - [GML](http://www.opengeospatial.org/standards/gml) for the ministries
   - CSV+[WKT](http://www.opengeospatial.org/standards/wkt-crs) for open-data enthusiasts
 - Supports for popular proprietary formats:
-  - [KML](https://developers.google.com/kml/documentation/kmlreference), KMZ (KML compressed)
+  - [KML](https://developers.google.com/kml/documentation/kmlreference), KMZ
   - ESRI Shapefile (multi-file format) ([pdf spec](https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf))
 - Supports for projections by EPSG codes to expose datasets in geographic
   or projected coordinate systems
@@ -36,14 +36,11 @@ We corporatively chose ASP.NET for this project simply because:
 - ASP.NET Web API is heavily used at [my] work. It's better to have wide internal support
   than bleeding edge in another technology stack.
 
-Print the [pdf](http://www.asp.net/media/4071077/aspnet-web-api-poster.pdf) of the http message lifecycle
-and keep it close.
+Print the [poster]({{ site.baseurl }}/assets/aspnet-web-api-poster.pdf){:target="_blank"} of the http message lifecycle and keep it close.
 
 
 Building a custom [MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter%28v=vs.118%29.aspx)
-----------------------------------------------------------------------------
-
-**TODO**: EXPLAIN WHAT IS A MEDIATYPEFORMATTER BASED ON THE PDF.
+--------------------------------------
 
 I would like to have an API that takes metadata and binary files at the same time. Being a potential user myself,
 the easiest way I know to call such an API would be by doing a ***multipart/form-data*** POST.
@@ -51,12 +48,29 @@ Since we want our API to be easy and fun to use, I won't go in other routes that
 a file, but here what we could do:
 
 - doing a two-steps approach; calling two endpoints successively: sending the metadata first and the files after **(requires a mediator)**
-- sending in bson, protobuf or another wire format **(needs a serializing library)**
+- sending in bson, protobuf or another wire format **(needs a serializing library at the client end)**
 - sending binary files in base64 along side metadata in json **(bandwidth unfriendly)**
 - POSTing a multipart/form-data containing untouched binary files and text fields for metadata **(good for me!)**
 
+Before customizing Web API, we must find the best extensibility point to support strongly-typed multipart/form-data request.
+By looking at the [poster]({{ site.baseurl }}/assets/aspnet-web-api-poster.pdf){:target="_blank"},
+we see that what we need to accomplish is called **Model Binding**.
 
-Building a custom [MultipartStreamProvider](https://msdn.microsoft.com/en-us/library/system.net.http.multipartstreamprovider%28v=vs.118%29.aspx) 
+![Model Binding from ASP.NET Web API Poster]({{ site.baseurl }}/assets/aspnet_poster_modelbinding.png)
+
+> Model binding uses the request to create values for the parameters of the action.
+> These values are passed to the action when the action is invoked.
+
+Since we are only interested in the body of the request, the best extensibility point is a custom
+[MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter%28v=vs.118%29.aspx).
+The documentation for MediaTypeFormatter is pretty minimal:
+
+> Base class to handle serializing and deserializing strongly-typed objects using ObjectContent.
+
+But don't fear, it is still very easy to extend ;)
+
+
+Building a custom [MultipartStreamProvider](https://msdn.microsoft.com/en-us/library/system.net.http.multipartstreamprovider%28v=vs.118%29.aspx)
 -------------------------------------------
 
 **TODO**: EXPLAIN WHAT IS A STREAMPROVIDER
@@ -83,3 +97,5 @@ a provider handling this scenario.
 *[WKT]: Well Known Text
 *[EPSG]: European Petroleum Survey Group
 *[KML]: Keyhole Markup Language
+*[KMZ]: Compressed Keyhole Markup Language
+*[POCO]: Plain Old CLR Object
